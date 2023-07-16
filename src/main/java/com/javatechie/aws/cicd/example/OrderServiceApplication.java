@@ -21,8 +21,11 @@ public class OrderServiceApplication {
 
     @GetMapping
     public List<Order> fetchOrders() {
-        return orderDao.getOrders().stream().
-                sorted(Comparator.comparing(Order::getPrice)).collect(Collectors.toList());
+        // To get records
+        return orderDao.getOrders();
+        // To get records in sorted order
+        // return orderDao.getOrders().stream().
+        // sorted(Comparator.comparing(Order::getPrice)).collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
